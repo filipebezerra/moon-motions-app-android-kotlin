@@ -107,13 +107,11 @@
         </activity>
         <activity
             android:name=".Step9Activity"
-            android:label="Custom animation"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:label="@string/title_activity_step9"
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
+                android:value=".MainActivity" />
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

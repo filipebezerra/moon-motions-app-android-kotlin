@@ -23,6 +23,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.reflect.KClass
 
@@ -89,7 +90,7 @@ private val data = listOf(
     Step(
         "Step 9",
         "My MotionLayout",
-        "Custom animation",
+        "Here I built my own MotionLayout animation",
         Step9Activity::class
     )
 )
@@ -134,11 +135,11 @@ class MainViewHolder(val cardView: CardView) : RecyclerView.ViewHolder(cardView)
             val intent = Intent(context, step.activity.java)
             context.startActivity(intent)
         }
-        val color = if (step.highlight) {
-            context.resources.getColor(R.color.secondaryLightColor)
+        val color = ContextCompat.getColor(context, if (step.highlight) {
+            R.color.secondaryLightColor
         } else {
-            context.resources.getColor(R.color.primaryTextColor)
-        }
+            R.color.primaryTextColor
+        })
         header.setTextColor(color)
         description.setTextColor(color)
     }
